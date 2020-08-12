@@ -35,7 +35,7 @@ x = 23
 y = 34
 r = 42
 h = sqrt(x ** 2 + y ** 2)
-print("Расстояние до точки от начала координат равно %.2f" % h)
+print("point 1 = %.2f" % h)
 if h > r:
     print("False")
 else:
@@ -45,7 +45,17 @@ else:
 point_2 = (30, 30)
 # Если точка point_2 лежит внутри круга (radius = 42), то выведите на консоль True,
 # Или False, если точка лежит вовне круга.
-# TODO здесь ваш код
+from math import sqrt
+
+x = 30
+y = 30
+r = 42
+h = sqrt(x ** 2 + y ** 2)
+print("point 2 = %.2f" % h)
+if h > r:
+    print("False")
+else:
+    print("True")
 
 # Пример вывода на консоль:
 #
