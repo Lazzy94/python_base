@@ -20,12 +20,8 @@ my_family_height = [
 #   Общий рост моей семьи - ХХ см
 
 
-my_family_height =[[
-    'Папа',178],
+my_family_height =[
     ['Мама',176],
     ['Я',190]]
 
-print('Рост отца - 178 см')
-S= 178+176+190
-W = 'Общий рост моей семьи'
-print(W,S,'см')
+print(sum(my_family_height))
