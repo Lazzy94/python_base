@@ -13,15 +13,9 @@ radius = 42
 
 from pprint import pprint
 P = 3.1415926
-x = P * radius
+o = P * radius
 
-pprint(round(x, 4))
-
-
-
-
-
-
+pprint(round(o, 4))
 
 
 # Далее, пусть есть координаты точки
@@ -35,7 +29,17 @@ point_1 = (23, 34)
 #       формула так же есть в интернете
 #       квадратный корень - это возведение в степень 0.5
 #       операции сравнения дают булевы константы True и False
-# TODO здесь ваш код
+from math import sqrt
+
+x = 23
+y = 34
+r = 42
+h = sqrt(x ** 2 + y ** 2)
+print("Расстояние до точки от начала координат равно %.2f" % h)
+if h > r:
+    print("False")
+else:
+    print("True")
 
 # Аналогично для другой точки
 point_2 = (30, 30)
