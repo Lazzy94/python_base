@@ -45,3 +45,5 @@ time_music1 = pocket_universe_songs['On Track']+pocket_universe_songs['To the Se
 print('А другте три песни звучат приблизительно ', round(time_music1),'минут')
 # Обратите внимание, что делать много вычислений внутри print() - плохой стиль.
 # Лучше заранее вычислить необходимое, а затем в print(xxx, yyy, zzz)
+
+# зачет!

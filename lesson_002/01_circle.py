@@ -33,10 +33,10 @@ point_1 = (23, 34)
 
 x = point_1[0]
 y = point_1[1]
-# h - длина отрезка
-h = sqrt(x ** 2 + y ** 2)
-print("point 1 = %.2f" % h)
-if h > radius:
+# допустим вот так: расстояние_до_точки
+distance_to_point = sqrt(x ** 2 + y ** 2)
+print("point 1 = %.2f" % distance_to_point)
+if distance_to_point > radius:
     print("False")
 else:
     print("True")
@@ -48,9 +48,9 @@ point_2 = (30, 30)
 
 x = point_2[0]
 y = point_2[1]
-h = sqrt(x ** 2 + y ** 2)
-print("point 2 = %.2f" % h)
-if h > radius:
+distance_to_point = sqrt(x ** 2 + y ** 2)
+print("point 2 = %.2f" % distance_to_point)
+if distance_to_point > radius:
     print("False")
 else:
     print("True")
@@ -60,3 +60,5 @@ else:
 # 77777.7777
 # False
 # False
+
+# зачет!

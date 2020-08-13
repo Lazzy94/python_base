@@ -27,3 +27,5 @@ lion_cage = zoo.index('lion')+1
 lark_cage = zoo.index('lark')+1
 print('Лев сидит в клетке под номером ',lion_cage)
 print('Жаворонок сидит в клетке под номером ',lark_cage)
+
+# зачет!
