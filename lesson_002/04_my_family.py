@@ -22,7 +22,5 @@ my_family_height = [
 
 print('Рост отца -',my_family_height[1][1],'см')
 
-# TODO в питоне очень важно название по нему можно сразу понять что в этом объекте
-# TODO наверное это их общая_высота_семьи
-O = my_family_height[0][1]+my_family_height[1][1]+my_family_height[2][1]
-print('Общий рост моей семьи', O,'см')
+total_height_family = my_family_height[0][1]+my_family_height[1][1]+my_family_height[2][1]
+print('Общий рост моей семьи', total_height_family,'см')

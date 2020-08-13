@@ -33,13 +33,10 @@ point_1 = (23, 34)
 
 x = point_1[0]
 y = point_1[1]
-# TODO нет необходимости дублировать переменную
-r = radius
-# h - длина отрезка между точкой и началом координат
-# TODO назовите ее более читаемыми словами
+# h - длина отрезка
 h = sqrt(x ** 2 + y ** 2)
 print("point 1 = %.2f" % h)
-if h > r:
+if h > radius:
     print("False")
 else:
     print("True")
@@ -51,11 +48,9 @@ point_2 = (30, 30)
 
 x = point_2[0]
 y = point_2[1]
-# TODO аналогично
-r = radius
 h = sqrt(x ** 2 + y ** 2)
 print("point 2 = %.2f" % h)
-if h > r:
+if h > radius:
     print("False")
 else:
     print("True")

@@ -10,6 +10,5 @@
 result = (1 + 2) * 3
 print(result)
 
-# TODO нейминг переменной сделайте более правильно
-X = ((1+2)*3-4)*5
-print(X)
+result1 = ((1+2)*3-4)*5
+print(result1)
