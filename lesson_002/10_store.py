@@ -52,7 +52,53 @@ print('Лампа -', lamps_quantity, 'шт, стоимость', lamps_cost, '�
 # WARNING для знающих циклы: БЕЗ циклов. Да, с переменными; да, неэффективно; да, копипаста.
 # Это задание на ручное вычисление - что бы потом понять как работают циклы и насколько с ними проще жить.
 
-# TODO здесь ваш код
+table_cost1 = store[goods['Стол']][0]['quantity'] * store[goods['Стол']][0]['price']
+table_cost2 = store[goods['Стол']][1]['quantity'] * store[goods['Стол']][1]['price']
+table_cost = table_cost1 + table_cost2
+table_code = goods['Стол']
+table_item1 = store[table_code ][0]
+table_item2 = store[table_code ][1]
+table_quantity1 = table_item1['quantity']
+table_quantity2 = table_item2['quantity']
+table_quantity = table_quantity1 + table_quantity2
+print('Стол -', table_quantity, 'шт, стоимость', table_cost, 'руб')
+
+
+sofa_cost1 = store[goods['Диван']][0]['quantity'] * store[goods['Диван']][0]['price']
+sofa_cost2 = store[goods['Диван']][1]['quantity'] * store[goods['Диван']][1]['price']
+sofa_cost = sofa_cost1 + sofa_cost2
+sofa_code = goods['Диван']
+sofa_item1 = store[sofa_code ][0]
+sofa_item2 = store[sofa_code ][1]
+sofa_quantity1 = sofa_item1['quantity']
+sofa_quantity2 = sofa_item2['quantity']
+sofa_quantity = sofa_quantity1 + sofa_quantity2
+print('Диван -', sofa_quantity, 'шт, стоимость', sofa_cost, 'руб')
+
+
+chair_cost1 = store[goods['Стул']][0]['quantity'] * store[goods['Стул']][0]['price']
+chair_cost2 = store[goods['Стул']][1]['quantity'] * store[goods['Стул']][1]['price']
+chair_cost3 = store[goods['Стул']][2]['quantity'] * store[goods['Стул']][2]['price']
+
+chair_cost = chair_cost1 + chair_cost2 + chair_cost3
+chair_code = goods['Стул']
+chair_item1 = store[chair_code ][0]
+chair_item2 = store[chair_code ][1]
+chair_item3 = store[chair_code ][2]
+chair_quantity1 = chair_item1['quantity']
+chair_quantity2 = chair_item2['quantity']
+chair_quantity3 = chair_item3['quantity']
+chair_quantity = chair_quantity1 + chair_quantity2 + chair_quantity3
+print('Стул -', chair_quantity, 'шт, стоимость', chair_cost, 'руб')
+
+
+
+
+
+
+
+
+
 
 ##########################################################################################
 # ВНИМАНИЕ! После того как __ВСЯ__ домашняя работа сделана и запушена на сервер,         #
