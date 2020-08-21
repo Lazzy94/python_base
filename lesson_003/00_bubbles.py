@@ -17,8 +17,9 @@ def bubble(point, step, color):
     radius =50
     for _ in range(3):
         radius += step
-        color
-        sd.circle(center_position=point, radius=radius, width=2, color=sd.random_color())
+        # тут вам нужно написать во так
+        color = sd.random_color()
+        sd.circle(center_position=point, radius=radius, width=2, color=color)
 point = sd.get_point(900, 600)
 bubble(point=point, step=10, color=sd.random_color())
 
@@ -39,3 +40,8 @@ for _ in range(100):
     bubble(point=point, step=5, color=sd.random_color())
 
 sd.pause()
+
+# Начиная с третьего модуля буду обращать внимание на то что подчеркивает Пайчар. Придерживаемся PEP8
+# Можно привести все к нужному формату code\Reformat code
+
+# TODO Есть недочеты в форматировании по PEP8, используйте пункт меню в пайчарме
