@@ -43,3 +43,5 @@ for line_number in range(0, 15):
 #           рисуем кирпич
 
 sd.pause()
+
+# зачет!

@@ -44,3 +44,5 @@ for rainbow_color in rainbow_colors:
 
 
 sd.pause()
+
+# зачет!
