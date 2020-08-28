@@ -9,6 +9,14 @@
 # Формат вывода:
 #   Студенту надо попросить ХХХ.ХХ рублей
 
+total_expenses = 0
 educational_grant, expenses = 10000, 12000
+month = 1
+while month < 10:
+    expenses = expenses + (expenses * 0.03)
+    total_expenses += expenses
+    month += 1
 
-# TODO здесь ваш код
+
+family_money = total_expenses - educational_grant * 10
+print('Студенту надо попросить ', round(family_money, 2), 'рублей')
