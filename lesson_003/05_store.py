@@ -61,3 +61,5 @@ for product_name, product_code in goods.items():
         product_count += product['quantity']
         product_price += product['price'] * product['quantity']
     print(f'{product_name} - {product_count} шт, стоимость {product_price} руб')
+
+# зачет!

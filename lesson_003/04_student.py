@@ -20,3 +20,5 @@ while month < 10:
 family_money = round(total_expenses - educational_grant * 10, 2)
 
 print('Студенту надо попросить ', family_money, 'рублей')
+
+# зачет!
