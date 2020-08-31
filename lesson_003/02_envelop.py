@@ -35,8 +35,8 @@
 # Определить, пройдет ли кирпич через отверстие (грани кирпича параллельны сторонам отверстия)
 
 hole_x, hole_y = 8, 9
-#brick_x, brick_y, brick_z = 11, 10, 2
-#brick_x, brick_y, brick_z = 11, 2, 10
+# brick_x, brick_y, brick_z = 11, 10, 2
+# brick_x, brick_y, brick_z = 11, 2, 10
 # brick_x, brick_y, brick_z = 10, 11, 2
 # brick_x, brick_y, brick_z = 10, 2, 11
 # brick_x, brick_y, brick_z = 2, 10, 11
@@ -59,8 +59,8 @@ if hole_x >= brick_x and hole_y >= brick_y:
     print('Да')
 elif hole_x >= brick_y and hole_y >= brick_x:
     print('Да')
-elif brick_x >= hole_x >= brick_z and brick_y >= hole_y >= brick_z and hole_x >= brick_x\
+elif brick_x >= hole_x >= brick_z and brick_y >= hole_y >= brick_z and hole_x >= brick_x \
         and hole_y >= brick_y and hole_x >= brick_y and hole_y >= brick_x:
-      print('Да')
+    print('Да')
 else:
     print('Нет')
