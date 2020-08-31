@@ -9,17 +9,14 @@
 # Формат вывода:
 #   Студенту надо попросить ХХХ.ХХ рублей
 
-total_expenses = 0
+total_expenses = 12000
 educational_grant, expenses = 10000, 12000
 month = 1
 while month < 10:
     expenses = expenses + (expenses * 0.03)
-    total_expenses += expenses
+    total_expenses += round(expenses, 2)
     month += 1
 
+family_money = round(total_expenses - educational_grant * 10, 2)
 
-family_money = total_expenses - educational_grant * 10
-# TODO Все вычисления и преобразования лучше выполнять до, а в принте выводить эту переменную
-print('Студенту надо попросить ', round(family_money, 2), 'рублей')
-
-# TODO результат не соответствует действительности, нужно доработать код!
+print('Студенту надо попросить ', family_money, 'рублей')

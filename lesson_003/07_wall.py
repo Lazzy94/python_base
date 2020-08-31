@@ -14,7 +14,6 @@ right_top_y = 50
 width = 3
 color = sd.COLOR_DARK_ORANGE
 
-
 for line_number in range(0, 15):
     if line_number % 2 == 0:
         left_bottom_x = 0
@@ -30,7 +29,6 @@ for line_number in range(0, 15):
         left_bottom_x += 100
     left_bottom_y += 50
     right_top_y += 50
-
 
 # Подсказки:
 #  Для отрисовки кирпича использовать функцию rectangle

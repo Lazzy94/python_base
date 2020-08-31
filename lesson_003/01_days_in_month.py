@@ -7,20 +7,6 @@
 # Если номер месяца некорректен - сообщить об этом
 
 # Номер месяца получать от пользователя следующим образом
-while True:
-    user_input = input('Введите номер месяца: ')
-    if user_input.isdigit():
-        user_input = int(user_input)
-        # TODO тут можно сделать проверку на вхождение по ключу в day_in_month_by_month_number
-        if 1 <= user_input <= 12:
-            # TODO если тру то выводим принт который у вас в конце кода сейчас
-            break
-        else:
-            print('Номер месяца должен быть от 1 до 12')
-    else:
-        print('Номер месяца должен быть числом')
-
-# TODO объекты данных объявляем выше сновной логики программы
 day_in_month_by_month_number = {
     1: 31,
     2: 28,
@@ -36,13 +22,17 @@ day_in_month_by_month_number = {
     12: 31,
 }
 
-print(f'В заданном месяце количество дней = {day_in_month_by_month_number[user_input]}')
-
+while True:
+    user_input = input('Введите номер месяца: ')
+    if user_input.isdigit():
+        user_input = int(user_input)
+        if day_in_month_by_month_number.get(user_input, False):
+            print(f'В заданном месяце количество дней = {day_in_month_by_month_number[user_input]}')
+            break
+        else:
+            print('Номер месяца должен быть от 1 до 12')
+    else:
+        print('Номер месяца должен быть числом')
 
 # Начиная с третьего модуля буду обращать внимание на то что подчеркивает Пайчар. Придерживаемся PEP8
 # Можно привести все к нужному формату code\Reformat code
-
-# TODO незаываем удалять тудушки!
-
-# TODO Есть недочеты в форматировании по PEP8, используйте пункт меню в пайчарме
-

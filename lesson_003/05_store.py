@@ -54,14 +54,10 @@ store = {
 #         подсчет стоимости товара
 #     вывод на консоль количества и стоимости товара на складе
 
-# TODO Используйте все силу Python, можно сразу распаковать product_name и product_code методом у словаря .items()
-for product_name in goods:
-    product_code = goods[product_name]
-    all_product = store[product_code]
+for product_name, product_code in goods.items():
     product_count = 0
     product_price = 0
-    # TODO тут мы получаем параметры_продукта сразу из store[product_code]
-    for product in all_product:
+    for product in store[product_code]:
         product_count += product['quantity']
         product_price += product['price'] * product['quantity']
     print(f'{product_name} - {product_count} шт, стоимость {product_price} руб')
