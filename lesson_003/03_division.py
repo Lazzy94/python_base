@@ -16,3 +16,5 @@ while dividend >= b:
     dividend -= b
     answer += 1
 print(f'Целочисленное деление {a} на {b} дает {answer}')
+
+# зачет!
