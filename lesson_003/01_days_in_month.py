@@ -26,10 +26,8 @@ while True:
     user_input = input('Введите номер месяца: ')
     if user_input.isdigit():
         user_input = int(user_input)
-        for user_input in day_in_month_by_month_number:
-            if day_in_month_by_month_number.get(user_input, False):
-                print(f'В заданном месяце количество дней = {day_in_month_by_month_number[user_input]}')
-                break
+        if user_input in day_in_month_by_month_number:
+            print(f'В заданном месяце количество дней = {day_in_month_by_month_number[user_input]}')
         else:
             print('Номер месяца должен быть от 1 до 12')
     else:
