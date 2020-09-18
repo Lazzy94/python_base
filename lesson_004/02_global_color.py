@@ -14,6 +14,8 @@ import simple_draw as sd
 # sd.get_vector()
 # и константы COLOR_RED, COLOR_ORANGE, COLOR_YELLOW, COLOR_GREEN, COLOR_CYAN, COLOR_BLUE, COLOR_PURPLE
 # Результат решения см lesson_004/results/exercise_02_global_color.jpg
+
+# TODO используем обновленный код от 01 задания
 def triangle(start_point, angle, length, color):
     width = 3
     current_point = start_point
@@ -70,6 +72,7 @@ colors = {
 
 point_0 = sd.get_point(10, 10)
 while True:
+    # TODO возможные цвета выведем до основного цикла while
     print('Возможные цвета')
     for color_index, color_definition in colors.items():
         print(color_index, ':', color_definition['name'])

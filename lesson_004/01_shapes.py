@@ -37,13 +37,18 @@ import simple_draw as sd
 # sd.line()
 # Результат решения см lesson_004/results/exercise_01_shapes.jpg
 
+# TODO сейчас видно что крайний вектор не доходит до первого есть разрыв
 def triangle(start_point, angle, length):
     width = 3
     current_point = start_point
+    # TODO рандж будем крутить от 0 до 361-120 с шагом 120
     for tilt_angle in range(angle, angle + 360, 120):
+        # TODO а angle которую мы принимаем в параметрах используем вот тут angle=tilt_angle+angle
+        # TODO в параметрах вектора дописать
         v = sd.get_vector(start_point=current_point, angle=tilt_angle, length=length, width=width)
         v.draw()
         current_point = v.end_point
+    # TODO а крайнею вектор мы будем рисовать линией sd.line (от, до, ширина)
 
 
 point_0 = sd.get_point(10, 10)

@@ -10,6 +10,8 @@ import simple_draw as sd
 # Код функций из упр lesson_004/02_global_color.py скопировать сюда
 # Результат решения см lesson_004/results/exercise_03_shape_select.jpg
 
+
+# TODO используем обновленный код от 01 задания
 def triangle(start_point, angle, length):
     width = 3
     current_point = start_point
@@ -55,6 +57,7 @@ figures = {
 }
 
 while True:
+    # TODO вынести до основного цикла while
     print('Возможные фигуры')
     for figures_index, figures_definition in figures.items():
         print(figures_index, ':', figures_definition['name'])
