@@ -14,7 +14,7 @@ N = 20
 # sd.get_point()
 # sd.snowflake()
 # sd.sleep()
-# sd.random_number()
+# sd.random_number()*
 # sd.user_want_exit()
 
 snowflakes_setting = []
