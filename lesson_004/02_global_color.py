@@ -15,35 +15,40 @@ import simple_draw as sd
 # и константы COLOR_RED, COLOR_ORANGE, COLOR_YELLOW, COLOR_GREEN, COLOR_CYAN, COLOR_BLUE, COLOR_PURPLE
 # Результат решения см lesson_004/results/exercise_02_global_color.jpg
 
-# TODO используем обновленный код от 01 задания
 def triangle(start_point, angle, length, color):
     width = 3
     current_point = start_point
-    for tilt_angle in range(angle, angle + 360, 120):
-        v = sd.get_vector(start_point=current_point, angle=tilt_angle, length=length, width=width)
+    for tilt_angle in range(angle, angle + 240, 120):
+        v = sd.get_vector(start_point=current_point, angle=tilt_angle + angle, length=length, width=width)
         v.draw(color=color)
         current_point = v.end_point
+    sd.line(start_point=point_0, end_point=v.end_point, width=width, color=color)
+
+
+point_0 = sd.get_point(10, 10)
 
 
 def square(start_point, angle, length, color):
     width = 3
     current_point = start_point
-    for tilt_angle in range(angle, angle + 360, 90):
-        v = sd.get_vector(start_point=current_point, angle=tilt_angle, length=length, width=width)
+    for tilt_angle in range(angle, angle + 361 - 120, 90):
+        v = sd.get_vector(start_point=current_point, angle=tilt_angle + angle, length=length, width=width)
         v.draw(color=color)
         current_point = v.end_point
+    sd.line(start_point=point_1, end_point=v.end_point, width=width, color=color)
 
 
-point_1 = sd.get_point(500, 10)
+point_1 = sd.get_point(500, 200)
 
 
 def pentagon(start_point, angle, length, color):
     width = 3
     current_point = start_point
-    for tilt_angle in range(angle, angle + 360, 72):
-        v = sd.get_vector(start_point=current_point, angle=tilt_angle, length=length, width=width)
+    for tilt_angle in range(angle, angle + 361 - 72, 72):
+        v = sd.get_vector(start_point=current_point, angle=tilt_angle + angle, length=length, width=width)
         v.draw(color=color)
         current_point = v.end_point
+    sd.line(start_point=point_2, end_point=v.end_point, width=width, color=color)
 
 
 point_2 = sd.get_point(100, 300)
@@ -52,10 +57,11 @@ point_2 = sd.get_point(100, 300)
 def hexagon(start_point, angle, length, color):
     width = 3
     current_point = start_point
-    for tilt_angle in range(angle, angle + 360, 60):
-        v = sd.get_vector(start_point=current_point, angle=tilt_angle, length=length, width=width)
+    for tilt_angle in range(angle, angle + 361 - 60, 60):
+        v = sd.get_vector(start_point=current_point, angle=tilt_angle + angle, length=length, width=width)
         v.draw(color=color)
         current_point = v.end_point
+    sd.line(start_point=point_3, end_point=v.end_point, width=width, color=color)
 
 
 point_3 = sd.get_point(350, 300)
@@ -69,11 +75,8 @@ colors = {
     5: {'name': 'blue', 'sd_object': sd.COLOR_BLUE},
     6: {'name': 'purple', 'sd_object': sd.COLOR_PURPLE},
 }
-
-point_0 = sd.get_point(10, 10)
+print('Возможные цвета')
 while True:
-    # TODO возможные цвета выведем до основного цикла while
-    print('Возможные цвета')
     for color_index, color_definition in colors.items():
         print(color_index, ':', color_definition['name'])
     user_input = input('Введите желаемый цвет > ')

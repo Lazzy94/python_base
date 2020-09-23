@@ -5,6 +5,7 @@ import simple_draw as sd
 sd.resolution = (600, 800)
 root_point = sd.get_point(300, 30)
 
+
 # 1) Написать функцию draw_branches, которая должна рисовать две ветви дерева из начальной точки
 # Функция должна принимать параметры:
 # - точка начала рисования,
@@ -41,7 +42,7 @@ root_point = sd.get_point(300, 30)
 # TODO Так и пойдет рекурсия! Функция будет вызывать себя два раза каждый раз пока
 # TODO длинна ветки не будет минимальной! (делали проверку в начале функции)
 
-def branch(point, angle, length, delta):
+def branch(point, angle, length):
     if length < 10:
         return
     v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
@@ -49,15 +50,12 @@ def branch(point, angle, length, delta):
     next_point = v1.end_point
     next_angle = angle - delta
     next_length = length * .75
-    branch(point=next_point, angle=next_angle, length=next_length, delta=delta)
+    branch(point=next_point, angle=next_angle, length=next_length)
 
 
 # TODO тут вызов только одной функции с начальными параметрами
-for delta in range(0, 60, 5):
-    branch(point=root_point, angle=90, length=100, delta=delta)
-for delta in range(-60, 1, 3):
-    branch(point=root_point, angle=90, length=100, delta=delta)
-
+for delta in range(0, -60 + 10, 5):
+    branch(point=root_point, angle=90, length=100)
 # 4) Усложненное задание (делать по желанию)
 # - сделать рандомное отклонение угла ветвей в пределах 40% от 30-ти градусов
 # - сделать рандомное отклонение длины ветвей в пределах 20% от коэффициента 0.75

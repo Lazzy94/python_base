@@ -37,18 +37,14 @@ import simple_draw as sd
 # sd.line()
 # Результат решения см lesson_004/results/exercise_01_shapes.jpg
 
-# TODO сейчас видно что крайний вектор не доходит до первого есть разрыв
 def triangle(start_point, angle, length):
     width = 3
     current_point = start_point
-    # TODO рандж будем крутить от 0 до 361-120 с шагом 120
-    for tilt_angle in range(angle, angle + 360, 120):
-        # TODO а angle которую мы принимаем в параметрах используем вот тут angle=tilt_angle+angle
-        # TODO в параметрах вектора дописать
-        v = sd.get_vector(start_point=current_point, angle=tilt_angle, length=length, width=width)
+    for tilt_angle in range(angle, angle + 240, 120):
+        v = sd.get_vector(start_point=current_point, angle=tilt_angle + angle, length=length, width=width)
         v.draw()
         current_point = v.end_point
-    # TODO а крайнею вектор мы будем рисовать линией sd.line (от, до, ширина)
+    sd.line(start_point=point_0, end_point=v.end_point, width=width)
 
 
 point_0 = sd.get_point(10, 10)
@@ -58,23 +54,25 @@ triangle(start_point=point_0, angle=10, length=200)
 def square(start_point, angle, length):
     width = 3
     current_point = start_point
-    for tilt_angle in range(angle, angle + 360, 90):
-        v = sd.get_vector(start_point=current_point, angle=tilt_angle, length=length, width=width)
+    for tilt_angle in range(angle, angle + 361 - 120, 90):
+        v = sd.get_vector(start_point=current_point, angle=tilt_angle + angle, length=length, width=width)
         v.draw()
         current_point = v.end_point
+    sd.line(start_point=point_1, end_point=v.end_point, width=width)
 
 
-point_1 = sd.get_point(500, 10)
+point_1 = sd.get_point(500, 200)
 square(start_point=point_1, angle=80, length=200)
 
 
 def pentagon(start_point, angle, length):
     width = 3
     current_point = start_point
-    for tilt_angle in range(angle, angle + 360, 72):
-        v = sd.get_vector(start_point=current_point, angle=tilt_angle, length=length, width=width)
+    for tilt_angle in range(angle, angle + 361 - 72, 72):
+        v = sd.get_vector(start_point=current_point, angle=tilt_angle + angle, length=length, width=width)
         v.draw()
         current_point = v.end_point
+    sd.line(start_point=point_2, end_point=v.end_point, width=width)
 
 
 point_2 = sd.get_point(100, 300)
@@ -84,10 +82,11 @@ pentagon(start_point=point_2, angle=10, length=100)
 def hexagon(start_point, angle, length):
     width = 3
     current_point = start_point
-    for tilt_angle in range(angle, angle + 360, 60):
-        v = sd.get_vector(start_point=current_point, angle=tilt_angle, length=length, width=width)
+    for tilt_angle in range(angle, angle + 361 - 60, 60):
+        v = sd.get_vector(start_point=current_point, angle=tilt_angle + angle, length=length, width=width)
         v.draw()
         current_point = v.end_point
+    sd.line(start_point=point_3, end_point=v.end_point, width=width)
 
 
 point_3 = sd.get_point(350, 300)
