@@ -2,8 +2,8 @@
 
 import simple_draw as sd
 
-sd.resolution = (600, 800)
-root_point = sd.get_point(300, 30)
+sd.resolution = (1200, 800)
+root_point = sd.get_point(600, 30)
 
 
 # 1) Написать функцию draw_branches, которая должна рисовать две ветви дерева из начальной точки
@@ -31,31 +31,22 @@ root_point = sd.get_point(300, 30)
 
 # можно поиграть -шрифтами- цветами и углами отклонения
 
-# TODO Примерные алгоритм функции c рекурсией:
 
-# TODO объявляем функцию которая принимает три параметра, как написано выше!
-# TODO сравниваем если длинна ветки меньше определенного значения то выходим, как написано выше!
-# TODO Рисуем вектор, это наш ствол дерева под углом в 90 градусов.
-# TODO Чекаем конец этого вектора, и запоминаем. От сюда мы будем рисовать ветки.
-# TODO задаем новый угол и длину ветки, так делаем два раза для двух новых вызовов, запоминаем их в разных переменных.
-# TODO вызываем два раза нашу функцию, с разными параметрами для того чтобы получились ветки.
-# TODO Так и пойдет рекурсия! Функция будет вызывать себя два раза каждый раз пока
-# TODO длинна ветки не будет минимальной! (делали проверку в начале функции)
-
-def branch(point, angle, length):
-    if length < 10:
-        return
-    v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
-    v1.draw()
-    next_point = v1.end_point
-    next_angle = angle - delta
-    next_length = length * .75
-    branch(point=next_point, angle=next_angle, length=next_length)
-
-
-# TODO тут вызов только одной функции с начальными параметрами
-for delta in range(0, -60 + 10, 5):
-    branch(point=root_point, angle=90, length=100)
+# def draw_branches(point, angle, length):
+#     if length < 10:
+#         return
+#     v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
+#     v1.draw()
+#     next_point = v1.end_point
+#     next_angle_1 = angle - 30
+#     next_angle_2 = angle + 30
+#     next_length = length * .75
+#     draw_branches(point=next_point, angle=next_angle_1, length=next_length)
+#     draw_branches(point=next_point, angle=next_angle_2, length=next_length)
+#
+#
+# for delta in range(-61, 61, 4):
+#     draw_branches(point=root_point, angle=90, length=100)
 # 4) Усложненное задание (делать по желанию)
 # - сделать рандомное отклонение угла ветвей в пределах 40% от 30-ти градусов
 # - сделать рандомное отклонение длины ветвей в пределах 20% от коэффициента 0.75
@@ -63,5 +54,19 @@ for delta in range(0, -60 + 10, 5):
 
 # Пригодятся функции
 # sd.random_number()
+def draw_branches(point, angle, length):
+    if length < 10:
+        return
+    v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
+    v1.draw()
+    next_point = v1.end_point
+    next_angle_1 = angle - sd.random_number(30 -(30*0.4), 30 + (30 * 0.40))
+    next_angle_2 = angle + sd.random_number(30 -(30*0.4), 30 + (30 * 0.40))
+    next_length_1 = length * (sd.random_number(75 - (75 * 0.20), 75 + (75 * 0.20))/100)
+    next_length_2 = length * (sd.random_number(75 - (75 * 0.20), 75 + (75 * 0.20))/100)
+    draw_branches(point=next_point, angle=next_angle_1, length=next_length_1)
+    draw_branches(point=next_point, angle=next_angle_2, length=next_length_2)
 
+
+draw_branches(point=root_point, angle=90, length=200)
 sd.pause()
